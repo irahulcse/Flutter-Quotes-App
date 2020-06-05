@@ -25,8 +25,9 @@ class _WisdomeState extends State<Wisdome> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(quotes[_index]),
+            Text(quotes[_index % quotes.length]),
             FlatButton.icon(
+            
               label: Text(
                 "Inspire Me",
               ),
@@ -44,8 +45,11 @@ class _WisdomeState extends State<Wisdome> {
   void _showQuote() {
     //increment the counter by one
     setState(() {
-      
-      _index+=1;  
+      _index += 1;
+
+      // if (_index > 8) {
+      //   _index = 0;
+      // }
     });
   }
 }
